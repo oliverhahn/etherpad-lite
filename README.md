@@ -26,20 +26,12 @@ Etherpad works with node v0.8 and v0.10, only. (We don't support v0.6)
 
 ## Windows
 
-### Prebuilt windows package
-This package works out of the box on any windows machine, but it's not very useful for developing purposes...
-
-1. [Download the latest windows package](http://etherpad.org/#download)
-2. Extract the folder
-
-Now, run `start.bat` and open <http://localhost:9001> in your browser. You like it? [Next steps](#next-steps).
-
 ### Fancy install
 You'll need [node.js](http://nodejs.org) and (optionally, though recommended) git.
 
 1. Grab the source, either
-  - download <https://github.com/ether/etherpad-lite/zipball/master>
-  - or `git clone https://github.com/ether/etherpad-lite.git` (for this you need git, obviously)
+  - recommended: `git clone https://github.com/oliverhahn/etherpad-lite.git` (for this you need git, obviously)
+  - or download <https://github.com/oliverhahn/etherpad-lite/zipball/master>
 2. start `bin\installOnWindows.bat`
 
 Now, run `start.bat` and open <http://localhost:9001> in your browser.
@@ -48,7 +40,7 @@ Update to the latest version with `git pull origin`, then run `bin\installOnWind
 
 [Next steps](#next-steps).
 
-## GNU/Linux and other UNIX-like systems
+## Mac, GNU/Linux and other UNIX-like systems
 You'll need gzip, git, curl, libssl develop libraries, python and gcc.  
 *For Debian/Ubuntu*: `apt-get install gzip git-core curl python libssl-dev pkg-config build-essential`  
 *For Fedora/CentOS*: `yum install gzip git-core curl python openssl-devel && yum groupinstall "Development Tools"`
@@ -58,7 +50,7 @@ Additionally, you'll need [node.js](http://nodejs.org) installed, Ideally the la
 
 **As any user (we recommend creating a separate user called etherpad):**
 
-1. Move to a folder where you want to install Etherpad. Clone the git repository `git clone git://github.com/ether/etherpad-lite.git`
+1. Move to a folder where you want to install Etherpad. Clone the git repository `git clone git://github.com/oliverhahn/etherpad-lite.git`
 2. Change into the new directory containing the cloned source code `cd etherpad-lite`
 
 Now, run `bin/run.sh` and open <http://127.0.0.1:9001> in your browser. 
@@ -90,14 +82,7 @@ You can debug Etherpad using `bin/debugRun.sh`.
 
 If you want to find out how Etherpad's `Easysync` works (the library that makes it really realtime), start with this [PDF](https://github.com/ether/etherpad-lite/raw/master/doc/easysync/easysync-full-description.pdf) (complex, but worth reading).
 
-## Getting started
-You know all this and just want to know how you can help?
-
-Look at the [TODO list](https://github.com/ether/etherpad-lite/wiki/TODO) and our [Issue tracker](https://github.com/ether/etherpad-lite/issues). (Please consider using [jshint](http://www.jshint.com/about/), if you plan to contribute code.)
-
-Also, and most importantly, read our [**Developer Guidelines**](https://github.com/ether/etherpad-lite/blob/master/CONTRIBUTING.md), really!
-
-# Get in touch
+# Get in touch with original etherpad-lite
 Join the [mailinglist](http://groups.google.com/group/etherpad-lite-dev) and make some noise on our busy freenode irc channel [#etherpad-lite-dev](http://webchat.freenode.net?channels=#etherpad-lite-dev)!
 
 # Modules created for this project
@@ -105,11 +90,6 @@ Join the [mailinglist](http://groups.google.com/group/etherpad-lite-dev) and mak
 * [ueberDB](https://github.com/Pita/ueberDB) "transforms every database into a object key value store" - manages all database access
 * [channels](https://github.com/Pita/channels) "Event channels in node.js" - ensures that ueberDB operations are atomic and in series for each key
 * [async-stacktrace](https://github.com/Pita/async-stacktrace) "Improves node.js stacktraces and makes it easier to handle errors"
-
-# Donate!
-* [Flattr] (http://flattr.com/thing/71378/Etherpad-Foundation)
-* Paypal - Press the donate button on [etherpad.org](http://etherpad.org)
-* [Bitcoin] (https://coinbase.com/checkouts/1e572bf8a82e4663499f7f1f66c2d15a)
 
 # License
 [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0.html)
