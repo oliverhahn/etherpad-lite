@@ -206,7 +206,7 @@ var padeditbar = (function()
 
           if(module.css('display') != "none")
           {
-            $("#" + modules[i] + "link").removeClass("selected");
+            $("#" + self.dropdowns[i] + "link").removeClass("selected");
             module.slideUp("fast", cb);
             returned = true;
           }
@@ -285,7 +285,7 @@ var padeditbar = (function()
     });
 
     toolbar.registerCommand("showTimeSlider", function () {
-      document.location = document.location + "/timeslider";
+      document.location = document.location.pathname+ '/timeslider';
     });
 
     toolbar.registerAceCommand("bold", aceAttributeCommand);
@@ -297,7 +297,7 @@ var padeditbar = (function()
       ace.ace_doUndoRedo(cmd);
     });
 
-    toolbar.registerAceCommand("redo", function (cmd) {
+    toolbar.registerAceCommand("redo", function (cmd, ace) {
       ace.ace_doUndoRedo(cmd);
     });
 
@@ -329,6 +329,14 @@ var padeditbar = (function()
       }
       else {
         ace.ace_setAttributeOnSelection('author', '');
+      }
+    });
+
+    toolbar.registerCommand('timeslider_returnToPad', function(cmd) {
+      if( document.referrer.length > 0 && document.referrer.substring(document.referrer.lastIndexOf("/")-1, document.referrer.lastIndexOf("/")) === "p") {
+        document.location = document.referrer;
+      } else {
+        document.location = document.location.href.substring(0,document.location.href.lastIndexOf("/"));
       }
     });
   }
